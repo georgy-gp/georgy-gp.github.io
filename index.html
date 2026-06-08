@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>John Georgy | Portfolio</title>
+
+<title>Georgy Prakash P | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -14,6 +14,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
     font-family:'Poppins',sans-serif;
 }
 
@@ -23,6 +24,28 @@ body{
     line-height:1.6;
 }
 
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 18px;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
 header{
     min-height:100vh;
     display:flex;
@@ -30,56 +53,72 @@ header{
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:20px;
     background:linear-gradient(
     135deg,
     #0f172a,
     #1e293b,
     #3b82f6
     );
-    padding:20px;
+}
+
+.profile-pic{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid rgba(255,255,255,0.2);
+    box-shadow:0 0 30px rgba(59,130,246,0.6);
+    margin-bottom:25px;
 }
 
 header h1{
     font-size:4rem;
-    margin-bottom:10px;
 }
 
 header h2{
-    color:#cbd5e1;
     font-weight:400;
+    color:#cbd5e1;
+    margin-top:10px;
+}
+
+.button-group{
+    margin-top:30px;
 }
 
 .btn{
     display:inline-block;
-    margin-top:25px;
     padding:12px 25px;
+    margin:10px;
     border-radius:30px;
-    background:#3b82f6;
-    color:white;
     text-decoration:none;
+    color:white;
+    background:#3b82f6;
     transition:0.3s;
 }
 
 .btn:hover{
+    transform:translateY(-4px);
     background:#2563eb;
-    transform:translateY(-3px);
 }
 
 section{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:80px 20px;
+    padding:90px 20px;
 }
 
 .section-title{
     text-align:center;
-    font-size:2.2rem;
+    font-size:2.3rem;
     margin-bottom:40px;
 }
 
 .about{
     text-align:center;
     color:#cbd5e1;
+    max-width:800px;
+    margin:auto;
 }
 
 .skills{
@@ -91,47 +130,90 @@ section{
 
 .skill{
     background:#1e293b;
-    padding:12px 20px;
-    border-radius:30px;
     border:1px solid #334155;
+    padding:12px 22px;
+    border-radius:30px;
 }
 
 .projects{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:25px;
 }
 
 .card{
     background:#1e293b;
-    padding:25px;
-    border-radius:20px;
-    transition:0.3s;
     border:1px solid #334155;
+    border-radius:20px;
+    padding:20px;
+    transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-8px);
 }
 
-.card h3{
-    margin-bottom:10px;
-    color:#60a5fa;
+.project-placeholder{
+    height:200px;
+    border:2px dashed #60a5fa;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#cbd5e1;
+    margin-bottom:15px;
 }
 
-footer{
+.card h3{
+    color:#60a5fa;
+    margin-bottom:10px;
+}
+
+.education-card{
+    background:#1e293b;
+    border:1px solid #334155;
+    padding:25px;
+    border-radius:20px;
+    max-width:700px;
+    margin:auto;
     text-align:center;
-    padding:40px;
-    background:#020617;
-    color:#94a3b8;
 }
 
 .contact{
     text-align:center;
 }
 
-.contact p{
-    margin:10px 0;
+.contact a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+footer{
+    background:#020617;
+    color:#94a3b8;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+    nav a{
+        margin:0 8px;
+        font-size:14px;
+    }
+
+    header h1{
+        font-size:2.5rem;
+    }
+
+    header h2{
+        font-size:1rem;
+    }
+
+    .profile-pic{
+        width:170px;
+        height:170px;
+    }
 }
 
 </style>
@@ -139,102 +221,188 @@ footer{
 
 <body>
 
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 <header>
-    <h1>John Georgy</h1>
+
+    <img src="profile.jpeg" alt="Georgy Prakash P" class="profile-pic">
+
+    <h1>Georgy Prakash P</h1>
 
     <h2>
-        Junior Linux Admin  • Devops Engineering Enthusiast • IoT Builder
+        Aspiring DevOps Engineer • Linux Enthusiast • IoT Developer
     </h2>
 
-    <a href="#projects" class="btn">
-        View My Projects
-    </a>
+    <div class="button-group">
+
+        <a href="resume.pdf" class="btn" target="_blank">
+            Download Resume
+        </a>
+
+        <a href="https://www.linkedin.com/in/georgy-prakashp-566233306"
+           class="btn"
+           target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+
 </header>
 
-<section>
+<section id="about">
+
     <h2 class="section-title">About Me</h2>
 
     <div class="about">
+
         <p>
-            I am a Computer Science student passionate about
-            Flutter Development, Data Engineering, Cloud Computing,
-            Linux, Docker and IoT systems.
+            I am a Computer Science student passionate about Linux,
+            DevOps, Cloud Computing and IoT systems.
         </p>
 
         <br>
 
         <p>
-            My goal is to build scalable software and data solutions
-            that solve real-world problems.
+            I enjoy building practical solutions using Docker,
+            Raspberry Pi, AWS IoT, NGINX and modern software tools.
+            My goal is to become a DevOps Engineer and work on scalable
+            cloud infrastructure and automation systems.
         </p>
+
     </div>
+
 </section>
 
-<section>
+<section id="skills">
+
     <h2 class="section-title">Skills</h2>
 
     <div class="skills">
 
-        <div class="skill">Flutter</div>
-        <div class="skill">Dart</div>
-        <div class="skill">Python</div>
-        <div class="skill">SQL</div>
         <div class="skill">Linux</div>
         <div class="skill">Docker</div>
+        <div class="skill">Git</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">Bash</div>
+        <div class="skill">Python</div>
+        <div class="skill">NGINX</div>
         <div class="skill">AWS IoT</div>
+        <div class="skill">Flutter</div>
+        <div class="skill">SQL</div>
         <div class="skill">Firebase</div>
         <div class="skill">MQTT</div>
-        <div class="skill">Git</div>
 
     </div>
+
 </section>
 
 <section id="projects">
-    <h2 class="section-title">Projects</h2>
+
+    <h2 class="section-title">Featured Projects</h2>
 
     <div class="projects">
 
         <div class="card">
+
+            <div class="project-placeholder">
+                Project Screenshot Coming Soon
+            </div>
+
             <h3>Smart Hospital Waste Bin Monitoring System</h3>
+
             <p>
-                IoT-based biomedical waste monitoring using Raspberry Pi,
-                MQTT, AWS IoT and Firebase.
+                IoT-based biomedical waste monitoring system using
+                Raspberry Pi, MQTT, AWS IoT and Firebase.
             </p>
+
         </div>
 
         <div class="card">
+
+            <div class="project-placeholder">
+                Project Screenshot Coming Soon
+            </div>
+
             <h3>Medicine Expiry Detection App</h3>
+
             <p>
-                Mobile application for detecting and tracking medicine
-                expiry dates using Flutter.
+                Flutter application for tracking medicine expiry dates
+                and inventory management.
             </p>
+
         </div>
 
         <div class="card">
+
+            <div class="project-placeholder">
+                Project Screenshot Coming Soon
+            </div>
+
             <h3>Dockerized NGINX Web Server</h3>
+
             <p>
-                Linux-based deployment project using Docker,
-                NGINX and Bash automation.
+                Linux-based deployment project using Docker, NGINX
+                and Bash automation.
             </p>
+
         </div>
 
     </div>
+
 </section>
 
-<section>
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-card">
+
+        <h3>B.Tech Computer Science</h3>
+
+        <p>
+            Final Year Student
+        </p>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
     <h2 class="section-title">Contact</h2>
 
     <div class="contact">
-        <p>Email: georgy0123p@gmail.com</p>
-        <p>GitHub: github.com/georgy-gp</p>
-        <p>LinkedIn: Add your LinkedIn profile</p>
+
+        <p>Email: <a href="mailto:georgy0123p@gmail.com">georgy0123p@gmail.com</a></p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/georgy-gp" target="_blank">
+                github.com/georgy-gp
+            </a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/georgy-prakashp-566233306"
+               target="_blank">
+                View Profile
+            </a>
+        </p>
+
     </div>
+
 </section>
 
 <footer>
-    © 2026 Georgy Prakash P| Portfolio Website
+    © 2026 Georgy Prakash P • Portfolio Website
 </footer>
 
 </body>
 </html>
-```
